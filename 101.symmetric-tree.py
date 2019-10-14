@@ -14,6 +14,7 @@ class Solution(object):
                 return isMirror(left.left, right.right) == isMirror(left.right, right.left)
             else:
                 return False
+
 # iterative
 class Solution(object):
     def isSym(self, root):
@@ -25,7 +26,7 @@ class Solution(object):
             if not left and not right:
                 continue
             if not left or not right:
-                False
+                return False
             if left.val == right.val:
                 stack.append((left.left, right.right))
                 stack.append((left.right, right.left))
