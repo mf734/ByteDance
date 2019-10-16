@@ -1,19 +1,20 @@
 # recuresive
 class Solution(object):
     def isSymmetric(self, root):
+        def isMirror(p, q):
+            if not p and not q:
+                return True
+            if not p or not q:
+                return False
+            if p.val == q.val:
+                return isMirror(p.left, q.right) and isMirror(p.right, q.left)
+            else:
+                return False
         if not root:    
             return True
         else:
             return isMirror(root.left, root.right)
-        def isMirror(left, right):
-            if not left and not right:
-                return True
-            if not left or not right:
-                return False
-            if left.val == right.val:
-                return isMirror(left.left, right.right) == isMirror(left.right, right.left)
-            else:
-                return False
+        
 
 # iterative
 class Solution(object):
